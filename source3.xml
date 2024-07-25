@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
-   <person>
-      <name>simon</name>
-      <height>67.90</height>
-      <weight>112.37</weight>
-   </person>
-   <person>
-      <name>jacob</name>
-      <height>66.78</height>
-      <weight>120.67</weight>
-   </person>
-   <person>
-      <name>cindy</name>
-      <height>66.49</height>
-      <weight>127.45</weight>
-   </person>
-   <person>
-      <name>ivan</name>
-      <height>67.62</height>
-      <weight>114.14</weight>
-   </person>
+   <sale>
+      <store_code>WEB0003</store_code>
+      <product_code>SDF12098</product_code>
+      <quantity>10</quantity>
+      <unit_price>233</unit_price>
+   </sale>
+   <sale>
+      <store_code>WEB0003</store_code>
+      <product_code>SDF82934</product_code>
+      <quantity>3</quantity>
+      <unit_price>123</unit_price>
+   </sale>
+   <sale>
+      <store_code>WEB0003</store_code>
+      <product_code>SDF23923</product_code>
+      <quantity>21</quantity>
+      <unit_price>928</unit_price>
+   </sale>
+   <sale>
+      <store_code>WEB0003</store_code>
+      <product_code>SDF67384</product_code>
+      <quantity>12</quantity>
+      <unit_price>765</unit_price>
+   </sale>
 </data>

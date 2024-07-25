@@ -18,20 +18,27 @@ def extract_from_json(file_to_process):
 
 
 def extract_from_xml(file_to_process):
-    dataframe = pd.DataFrame(columns=["name", "height", "weight"])
+    dataframe = pd.DataFrame(columns=["store_code", "product_code", "quantity", "unit_price"])
     tree = ET.parse(file_to_process)
     root = tree.getroot()
-    for person in root:
-        name = person.find("name").text
-        height = float(person.find("height").text)
-        weight = float(person.find("weight").text)
-        dataframe = pd.concat([dataframe, pd.DataFrame([{"name": name, "height": height, "weight": weight}])],
+    for sale in root:
+        store_code = sale.find("store_code").text
+        product_code = sale.find("product_code").text
+        quantity = float(sale.find("quantity").text)
+        unit_price = float(sale.find("unit_price").text)
+        dataframe = pd.concat([dataframe,
+                               pd.DataFrame([{
+                                   "store_code": store_code,
+                                   "product_code": product_code,
+                                   "quantity": quantity,
+                                   "unit_price": unit_price
+                               }])],
                               ignore_index=True)
     return dataframe
 
 
 def extract():
-    extracted_data = pd.DataFrame(columns=['name', 'height', 'weight'])
+    extracted_data = pd.DataFrame(columns=["store_code", "product_code", "quantity", "unit_price"])
 
     for csvfile in glob.glob("*.csv"):
         extracted_data = pd.concat([extracted_data, pd.DataFrame(extract_from_csv(csvfile))], ignore_index=True)
@@ -46,8 +53,7 @@ def extract():
 
 
 def transform(data):
-    data['height'] = round(data.height * 0.0254, 2)
-    data['weight'] = round(data.weight * 0.45359237, 2)
+    data['subtotal'] = data.quantity * data.unit_price
 
     return data
 

@@ -1,4 +1,5 @@
-{"name":"jack","height":68.70,"weight":123.30}
-{"name":"tom","height":69.80,"weight":141.49}
-{"name":"tracy","height":70.01,"weight":136.46}
-{"name":"john","height":67.90,"weight":112.37}
+{"store_code":"POS0002","product_code":"K12345","quantity":10,"unit_price": 230}
+{"store_code":"POS0002","product_code":"K92232","quantity":2,"unit_price": 980}
+{"store_code":"POS0002","product_code":"K92382","quantity":23,"unit_price": 345}
+{"store_code":"POS0002","product_code":"K69382","quantity":8,"unit_price": 485}
+
