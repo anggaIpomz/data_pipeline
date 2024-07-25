@@ -2,6 +2,10 @@
 ## Overview
 This ETL (Extract, Transform, Load) script processes CSV, JSON, and XML files to extract data, transform it into the desired format, and load it into a CSV file. Additionally, it logs the progress of each step to a log file.
 
+
+![ETL_diagram](https://github.com/user-attachments/assets/8eae55cf-763b-4a07-9207-cc85954eb1d4)
+
+
 ## Prerequisites
 - Python 3.x
 - Pandas library
