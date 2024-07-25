@@ -17,7 +17,7 @@ Each file includes columns for Store Code, Product Code, Quantity, and Unit Pric
 During the transformation process, the quantity column will be multiplied by the unit price column to calculate the subtotal column.
 
 ### Load
-Finally, the newly formatted data will be loaded into a single CSV file.
+Finally, the newly formatted data will be loaded into sqlite database.
 
 ## Prerequisites
 - Python 3.x
