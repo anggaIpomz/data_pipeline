@@ -2,10 +2,12 @@ import glob
 import pandas as pd
 import xml.etree.ElementTree as ET
 from datetime import datetime
+import sqlite3
 
 log_file = "log_file.txt"
 target_file = "transformed_data.csv"
-
+db_name = "retail.db"
+table_name = "sale_order"
 
 def extract_from_csv(file_to_process):
     dataframe = pd.read_csv(file_to_process)
@@ -58,8 +60,8 @@ def transform(data):
     return data
 
 
-def load_data(target_file, transformed_data):
-    transformed_data.to_csv(target_file)
+def load_data(df, sql_connection, table_name):
+    df.to_sql(table_name, sql_connection, if_exists="replace", index=False)
 
 
 def log_progress(message):
@@ -78,12 +80,12 @@ log_progress("Extract phase Ended")
 
 log_progress("Transform phase Started")
 transformed_data = transform(extracted_data)
-print("Transformed Data")
-print(transformed_data)
 log_progress("Transform phase Ended")
 
 log_progress("Load phase Started")
-load_data(target_file, transformed_data)
+sql_connection = sqlite3.connect(db_name)
+load_data(transformed_data, sql_connection, table_name)
+sql_connection.close()
 log_progress("Load phase Ended")
 
 log_progress("ETL Job Ended")
