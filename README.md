@@ -36,4 +36,4 @@ python3 etl_script.py
 
 3. Check the log_file.txt for the progress of each step.
 
-4. The transformed data will be saved to transformed_data.csv.
+4. The transformed data will be saved to sqlite database.
