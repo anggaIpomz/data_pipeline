@@ -5,6 +5,19 @@ This ETL (Extract, Transform, Load) script processes CSV, JSON, and XML files to
 
 ![ETL_diagram](https://github.com/user-attachments/assets/8eae55cf-763b-4a07-9207-cc85954eb1d4)
 
+### Extract
+In the extraction process, this script will gather data from different sources and formats:
+- POS Store data from JSON files
+- Web Ecommerce data from XML files
+- ERP Sales data from CSV files
+  
+Each file includes columns for Store Code, Product Code, Quantity, and Unit Price.
+
+### Transform
+During the transformation process, the quantity column will be multiplied by the unit price column to calculate the subtotal column.
+
+### Load
+Finally, the newly formatted data will be loaded into a single CSV file.
 
 ## Prerequisites
 - Python 3.x
