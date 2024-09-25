@@ -1,4 +1,4 @@
-# Data Engineer Projects:
-1. Basic ETL Implementation: https://github.com/anggaipom/data_pipeline/tree/etl_basic
-2. ETL with Web Scraping: https://github.com/anggaipom/data_pipeline/blob/etl_web_scraping
-3. ETL with Apache Airflow: https://github.com/anggaipom/data_pipeline/blob/etl_apache_airflow
+# ETL CDC:
+
+ curl -X DELETE http://localhost:8083/connectors/postgres-connector
+ curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d {postgres_connector.json}
